@@ -105,7 +105,8 @@ All config variables use the `CAPY_` prefix to avoid polluting the shell environ
 | `CAPY_GREETING`     | `hello from capytools` | Message printed by the `capyhi` alias                                        |
 | `CAPY_COLOR_PROMPT` | `true`                 | Reserved for prompt colour customisation                                     |
 | `CAPY_LOCK_VERSION` | _(unset)_              | Pin `capytools update` to a specific version instead of fetching the latest  |
-
+| `CAPY_VSC_PATH`     | _(unset)_              | Path to Visual Studio Code executable for `open` alias                       |
+| `CAPY_VSC_ARGS`     | `--disable-gpu`        | Arguments to pass to Visual Studio Code when using the `open` alias          |
 To override a value, add it to `~/.capytools/user-capytools.conf.env`:
 
 ```bash

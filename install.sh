@@ -49,9 +49,9 @@ if [ -f "$USER_CONF" ]; then
   source "$USER_CONF"
 fi
 
-# Apply version lock if set — overrides the API-fetched latest
+# Apply version lock if set -- overrides the API-fetched latest
 if [ -n "${CAPY_LOCK_VERSION:-}" ]; then
-  echo "capytools: version lock active — pinned to $CAPY_LOCK_VERSION"
+  echo "capytools: version lock active -- pinned to $CAPY_LOCK_VERSION"
   LATEST="$CAPY_LOCK_VERSION"
 fi
 
@@ -80,7 +80,7 @@ if [ ! -d "$TARGET_DIR" ]; then
   echo "capytools: downloading $TARBALL_URL ..."
   curl -fsSL "$TARBALL_URL" | tar -xz -C "$TMPDIR"
 
-  # The archive extracts to capytools-<version>/ — glob for it
+  # The archive extracts to capytools-<version>/ -- glob for it
   EXTRACTED=""
   for d in "$TMPDIR"/capytools-*/; do
     EXTRACTED="$d"
@@ -114,7 +114,7 @@ if [ ! -f "$CAPYTOOLS_HOME/entry.sh" ]; then
 fi
 
 # Cache install.sh so `capytools update` can re-invoke it locally.
-# When piped via curl | bash, BASH_SOURCE[0] is unset — always re-download in that case.
+# When piped via curl | bash, BASH_SOURCE[0] is unset -- always re-download in that case.
 SELF_PATH="$(readlink -f "${BASH_SOURCE[0]:-}" 2>/dev/null || true)"
 if [ -f "${SELF_PATH:-}" ]; then
   cp "$SELF_PATH" "$CAPYTOOLS_HOME/install.sh"
@@ -152,7 +152,7 @@ fi
 # ---------------------------------------------------------------------------
 echo "capytools: [9/9] done."
 if [ -z "$PREV_VERSION" ]; then
-  echo "capytools: installed $LATEST — open a new shell or run: source ~/.bashrc"
+  echo "capytools: installed $LATEST -- open a new shell or run: source ~/.bashrc"
 else
-  echo "capytools: updated $PREV_VERSION -> $LATEST — open a new shell or run: source ~/.bashrc"
+  echo "capytools: updated $PREV_VERSION -> $LATEST -- open a new shell or run: source ~/.bashrc"
 fi
