@@ -1,7 +1,7 @@
 # capytools functions
 # shellcheck shell=bash
 
-CAPYTOOLS_VERSION="0.1.0"   # must match the git tag for this release
+CAPYTOOLS_VERSION="0.1.2"   # must match the git tag for this release
 
 capytools() {
   local conf="${CAPYTOOLS_HOME:-$HOME/.capytools}/capytools.conf.env"
