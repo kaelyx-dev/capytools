@@ -1,9 +1,6 @@
 # capytools functions
 # shellcheck shell=bash
 
-CAPYTOOLS_VERSION="0.1.3"   # must match the git tag for this release
-
-
 capytools() {
   local conf="${CAPYTOOLS_HOME:-$HOME/.capytools}/capytools.conf.env"
   case "${1:-}" in
@@ -136,7 +133,6 @@ install_if_not_exists () {
 
 open () {
   if ! is_config_key_set "CAPY_VSC_PATH"; then
-    echo "capytools: CAPY_VSC_PATH is not set in config" >&2
     return 1
   fi
 

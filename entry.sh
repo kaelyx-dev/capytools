@@ -26,6 +26,9 @@ if [ -d "$VDIR" ]; then
   # User overrides -- loaded after system conf so they take precedence
   [ -f "$CAPYTOOLS_HOME/user-capytools.conf.env" ] && source "$CAPYTOOLS_HOME/user-capytools.conf.env"
 
+  # Set CAPYTOOLS_VERSION from the .VERSION file written by install.sh
+  [ -f "$VDIR/.VERSION" ] && CAPYTOOLS_VERSION="$(cat "$VDIR/.VERSION")"
+
   # Functions before aliases (aliases may reference functions)
   # dependencies last since they may be needed by both
   [ -f "$VDIR/functions.sh" ]    && source "$VDIR/functions.sh"

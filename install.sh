@@ -93,9 +93,11 @@ if [ ! -d "$TARGET_DIR" ]; then
   fi
 
   mkdir -p "$TARGET_DIR"
-  cp "$EXTRACTED/aliases.sh"        "$TARGET_DIR/aliases.sh"
-  cp "$EXTRACTED/functions.sh"      "$TARGET_DIR/functions.sh"
+  cp "$EXTRACTED/aliases.sh"         "$TARGET_DIR/aliases.sh"
+  cp "$EXTRACTED/functions.sh"       "$TARGET_DIR/functions.sh"
+  cp "$EXTRACTED/dependencies.sh"    "$TARGET_DIR/dependencies.sh"
   cp "$EXTRACTED/capytools.conf.env" "$TARGET_DIR/capytools.conf.env"
+  echo "$LATEST" > "$TARGET_DIR/.VERSION"
 fi
 
 # ---------------------------------------------------------------------------
